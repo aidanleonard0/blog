@@ -6,8 +6,8 @@ export const SITE: Site = {
     'astro-erudite is a opinionated, unstyled blogging template—built with Astro, Tailwind, and shadcn/ui.',
   href: 'https://astro-erudite.vercel.app',
   author: 'jktrn',
-  locale: 'en-US',
-  featuredPostCount: 2,
+  locale: 'en-UK',
+  featuredPostCount: 3,
   postsPerPage: 3,
 }
 
