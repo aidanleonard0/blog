@@ -10,42 +10,70 @@ import { getRecentPosts } from '@/lib/data-utils'
 const blog = await getRecentPosts(SITE.featuredPostCount)
 ---
 
-<Layout class="max-w-3xl">
+<Layout class="xl:max-w-[100rem] max-w-3xl md:px-10">
   <PageHead slot="head" title="Home" />
-  <section class="rounded-lg border">
-    <div class="flex flex-col space-y-1.5 p-6">
-      <h3 class="text-3xl leading-none font-medium">er·u·dite</h3>
-      <p class="text-muted-foreground text-sm">
-        /ˈer(y)əˌdīt/ &bull; <span class="font-medium">adjective</span>
-      </p>
-    </div>
-    <div class="p-6 pt-0">
-      <p class="text-muted-foreground mb-2 text">
-        A place for stupid, pointless, and opinionated ideas.
-      </p>
-    </div>
-  </section>
-  <section class="flex flex-col gap-y-4">
-    <h2 class="text-2xl font-medium">Latest posts</h2>
-    <ul class="flex flex-col gap-y-4">
-      {
-        blog.map((post) => (
-          <li>
-            <BlogCard entry={post} />
-          </li>
-        ))
-      }
-    </ul>
-    <div class="flex justify-center">
-      <Link
-        href="/blog"
-        class={buttonVariants({ variant: 'ghost' }) + ' group'}
-      >
-        See all posts <span
-          class="ml-1.5 transition-transform group-hover:translate-x-1"
-          >&rarr;</span
+
+  <!-- GRID WRAPPER -->
+  <div class="grid gap-10 pt-15 xl:grid-cols-2 xl:grid-rows-2 xl:gap-16">
+
+    <!-- TOP LEFT -->
+    <section class="flex flex-col gap-y-10">
+      <h1 class="text-6xl leading-none font-bold">Hello there!</h1>
+
+      <div class="flex flex-col space-y-5 text-muted-foreground text-2xl max-w-prose">
+        <p>
+          Hi, I’m Aidan. I’m a Computer Science undergraduate based near London.
+        </p>
+        <p>
+          In my free time, I enjoy writing all of the blog posts found on this site, building keyboards,
+          and all things musical!
+        </p>
+        <p>
+          Feel free to have a browse and stay as long as you’d like.
+        </p>
+      </div>
+    </section>
+
+    <!-- RIGHT COLUMN — SPANS TWO ROWS -->
+    <section class="flex flex-col gap-y-10 xl:row-span-2">
+      <h1 class="text-6xl font-bold">Recent posts</h1>
+
+      <ul class="flex flex-col gap-y-4">
+        {
+          blog.map((post) => (
+            <li>
+              <BlogCard entry={post} />
+            </li>
+          ))
+        }
+      </ul>
+
+      <div class="flex justify-center">
+        <Link
+          href="/blog"
+          class={buttonVariants({ variant: 'ghost' }) + ' group'}
         >
-      </Link>
-    </div>
-  </section>
+          See all posts
+          <span class="ml-1.5 transition-transform group-hover:translate-x-1">
+            &rarr;
+          </span>
+        </Link>
+      </div>
+    </section>
+
+    <!-- BOTTOM LEFT -->
+    <section class="flex flex-col gap-y-10">
+      <h1 class="text-6xl leading-none font-bold">Career</h1>
+      <!-- put whatever content you want here -->
+    <!-- </section>
+        <section class="flex flex-col gap-y-10">
+      <h1 class="text-6xl leading-none font-bold">Welcome</h1>
+      
+    </section>
+        <section class="flex flex-col gap-y-10">
+      <h1 class="text-6xl leading-none font-bold">Welcome</h1>
+      
+    </section> --> 
+
+  </div>
 </Layout>
