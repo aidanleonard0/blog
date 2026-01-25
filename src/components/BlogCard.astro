@@ -30,64 +30,62 @@ const subpostCount = !isSubpost(entry.id) ? await getSubpostCount(entry.id) : 0
     href={`/${entry.collection}/${entry.id}`}
     class="flex flex-col gap-4 sm:flex-row"
   >
-    <div class="grow">
-      
+    <div class="flex grow flex-col">
       <!-- Top row -->
       <div class="flex items-center gap-3">
         <h3 class="min-w-0 grow text-2xl font-medium">
           {entry.data.title}
         </h3>
 
-        <!-- Inline read time for large layouts -->
         <span class="hidden text-sm whitespace-nowrap lg:inline">
           {readTime}
         </span>
       </div>
 
-      <!-- Meta row for small layouts: readTime | date -->
-      <div class="flex items-center gap-2 text-sm whitespace-nowrap lg:hidden">
-        <span>{readTime}</span>
-        <Separator orientation="vertical" className="h-4!" />
+      <!-- Meta row for small layouts -->
+      <div
+        class="text-muted-foreground flex items-center gap-2 text-sm whitespace-nowrap lg:hidden"
+      >
         <span>{formattedDate}</span>
+        <Separator orientation="vertical" className="h-4!" />
+        <span>{readTime}</span>
       </div>
 
       <!-- Date row for large layouts -->
       <div class="hidden text-sm whitespace-nowrap lg:block">
         <span>{formattedDate}</span>
       </div>
+      <!-- Description -->
+      <p class="text-muted-foreground mt-2 mb-2">
+        {entry.data.description}
+      </p>
 
-      <p class="text-muted-foreground mb-2 text-sm">{entry.data.description}</p>
-
-      <div
-        class="text-muted-foreground mb-2 flex flex-wrap items-center gap-x-2 text-xs"
-      >
-        <Separator orientation="vertical" className="h-4!" />
+      <!-- Bottom row: tags on left, subposts on right -->
+      <div class="flex items-end justify-between gap-3">
+        {
+          entry.data.tags && (
+            <div class="flex flex-wrap gap-2">
+              {entry.data.tags.map((tag) => (
+                <Badge variant="muted" className="flex items-center gap-x-1">
+                  <Icon name="lucide:hash" class="size-3" />
+                  {tag}
+                </Badge>
+              ))}
+            </div>
+          )
+        }
 
         {
           subpostCount > 0 && (
-            <>
-              <Separator orientation="vertical" className="h-4!" />
+            <div class="text-muted-foreground text-xs whitespace-nowrap">
               <span class="flex items-center gap-1">
                 <Icon name="lucide:file-text" class="size-3" />
                 {subpostCount} subpost{subpostCount === 1 ? '' : 's'}
               </span>
-            </>
+            </div>
           )
         }
       </div>
-
-      {
-        entry.data.tags && (
-          <div class="flex flex-wrap gap-2">
-            {entry.data.tags.map((tag) => (
-              <Badge variant="muted" className="flex items-center gap-x-1">
-                <Icon name="lucide:hash" class="size-3" />
-                {tag}
-              </Badge>
-            ))}
-          </div>
-        )
-      }
     </div>
   </Link>
 </div>
