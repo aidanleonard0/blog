@@ -40,17 +40,12 @@ const author =
 <meta property="og:url" content={Astro.url} />
 <meta property="og:author" content={author} />
 
-<meta name="twitter:title" content={title} />
-<meta name="twitter:description" content={description} />
 <meta
   property="twitter:image"
   content={post?.data?.image?.src
     ? `${SITE.href}${post.data.image.src}`
     : image}
 />
-<meta name="twitter:image:alt" content={title} />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:creator" content={author} />
 
 {
   post?.data.tags &&
