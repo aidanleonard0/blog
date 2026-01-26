@@ -1,5 +1,10 @@
 ---
 import { Badge } from '@/components/ui/badge'
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from '@/components/ui/tooltip'
 import { Separator } from '@/components/ui/separator'
 import {
   getCombinedReadingTime,
@@ -48,14 +53,27 @@ const subpostCount = !isSubpost(entry.id) ? await getSubpostCount(entry.id) : 0
           <span>{formattedDate}</span>
           <Separator orientation="vertical" className="h-4!" />
           <span>{readTime}</span>
+          <Separator orientation="vertical" className="h-4!" />
+          {
+            entry.data.favourite == true && (
+                <Icon name="lucide:stars" class="text-destructive size-4" />
+            )
+          }
         </div>
 
-        <!-- Date row for large layouts -->
-        <div class="hidden text-sm whitespace-nowrap lg:block">
+        <div
+          class="hidden items-center gap-2 text-sm whitespace-nowrap lg:flex"
+        >
           <span>{formattedDate}</span>
+          <Separator orientation="vertical" className="h-4!" />
+          {
+            entry.data.favourite && (
+              <Icon name="lucide:stars" class="text-destructive size-4" />
+            )
+          }
         </div>
 
-        <!-- Description -->
+      <!-- Description -->
         <p class="text-muted-foreground mt-2 mb-2">
           {entry.data.description}
         </p>

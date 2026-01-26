@@ -18,6 +18,10 @@ if (!author) {
 
 const projects = await getAllProjects()
 const authorPosts = await getPostsByAuthor('aidan')
+
+const favouritePosts = authorPosts.filter(
+  (post) => post.data.favourite
+);
 ---
 
 <Layout class="max-w-3xl">
@@ -29,32 +33,30 @@ const authorPosts = await getPostsByAuthor('aidan')
   <section class="flex flex-col gap-y-4">
     <h2 class="text-2xl font-medium">My Favourite Posts</h2>
     {
-      authorPosts.length > 0 ? (
-        <ul class="flex flex-col gap-4">
-          {authorPosts
-            .filter((post) => !post.data.draft)
-            .map((post) => (
-              <li>
-                <BlogCard entry={post} />
-              </li>
-            ))}
-        </ul>
-      ) : (
-        <p class="text-muted-foreground">
-          No posts available from this author.
-        </p>
-      )
-    }
+  favouritePosts.length > 0 ? (
+    <ul class="flex flex-col gap-4">
+      {favouritePosts.map((post) => (
+        <li>
+          <BlogCard entry={post} />
+        </li>
+      ))}
+    </ul>
+  ) : (
+    <p class="text-muted-foreground">
+      No favourite posts :(
+    </p>
+  )
+}
   </section>
   <section>
     <div class="min-w-full">
       <div class="prose mb-8">
         <p class="mt-0">
-          Hi I'm aidan...
+          <!-- Hi I'm aidan... -->
         </p>
       </div>
 
-      <h2 class="mb-4 text-2xl font-medium">My Projects</h2>
+      <h2 class="mb-4 text-2xl font-medium">Cool Projects</h2>
       <div class="flex flex-col gap-4">
         {projects.map((project) => <ProjectCard project={project} />)}
       </div>
