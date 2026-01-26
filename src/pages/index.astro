@@ -10,32 +10,31 @@ import { getRecentPosts } from '@/lib/data-utils'
 const blog = await getRecentPosts(SITE.featuredPostCount)
 ---
 
-<Layout class="xl:max-w-[100rem] max-w-3xl md:px-10">
+<Layout class="max-w-3xl md:px-10 xl:max-w-[100rem]">
   <PageHead slot="head" title="Home" />
 
   <!-- GRID WRAPPER -->
   <div class="grid gap-10 pt-15 xl:grid-cols-2 xl:grid-rows-2 xl:gap-16">
-
     <!-- TOP LEFT -->
     <section class="flex flex-col gap-y-10">
       <h1 class="text-6xl leading-none font-bold">Hello there...</h1>
 
-      <div class="flex flex-col space-y-5 text-muted-foreground text-2xl max-w-prose">
+      <div
+        class="text-muted-foreground flex max-w-prose flex-col space-y-5 text-2xl"
+      >
         <p>
           Hi, I’m Aidan. I’m a Computer Science undergraduate based near London.
         </p>
         <p>
-          In my free time, I enjoy writing all of the blog posts found on this site, building keyboards,
-          and all things musical!
+          In my free time, I enjoy writing all of the blog posts found on this
+          site, building keyboards, and all things musical!
         </p>
-        <p>
-          Feel free to have a browse and stay as long as you’d like.
-        </p>
+        <p>Feel free to have a browse and stay as long as you’d like.</p>
       </div>
     </section>
 
     <!-- RIGHT COLUMN — SPANS TWO ROWS -->
-    <section class="flex flex-col gap-y-10 xl:row-span-2">
+    <section class="flex flex-col gap-y-5 xl:row-span-2">
       <h1 class="text-6xl font-bold">Recent posts</h1>
 
       <ul class="flex flex-col gap-y-4">
@@ -48,32 +47,34 @@ const blog = await getRecentPosts(SITE.featuredPostCount)
         }
       </ul>
 
-      <div class="flex justify-center">
+      <h1 class="text-bold flex justify-center">
         <Link
           href="/blog"
           class={buttonVariants({ variant: 'ghost' }) + ' group'}
         >
-          See all posts
+          View All Posts
           <span class="ml-1.5 transition-transform group-hover:translate-x-1">
             &rarr;
           </span>
         </Link>
-      </div>
+      </h1>
     </section>
 
     <!-- BOTTOM LEFT -->
     <section class="flex flex-col gap-y-10">
       <h1 class="text-6xl leading-none font-bold">Career</h1>
-      <!-- put whatever content you want here -->
-    <!-- </section>
-        <section class="flex flex-col gap-y-10">
-      <h1 class="text-6xl leading-none font-bold">Welcome</h1>
-      
-    </section>
-        <section class="flex flex-col gap-y-10">
-      <h1 class="text-6xl leading-none font-bold">Welcome</h1>
-      
-    </section> --> 
+      <p class="text-muted-foreground max-w-prose text-2xl">
+        Currently working at <Link
+          href="https://www.tjx.com/"
+          class="text-foreground-muted decoration-muted-foreground hover:text-foreground hover:decoration-1"
+          external
+          underline>TJX Europe</Link
+        > as a Network & Data Automation Engineer (on placement).
+      </p>
 
+      <p class="text-muted-foreground max-w-prose text-2xl">
+        I build websites for people in my free time.
+      </p>
+    </section>
   </div>
 </Layout>
