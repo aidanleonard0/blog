@@ -23,32 +23,37 @@ const socialLinks: SocialLink[] = [
   author.data.mail && { href: `mailto:${author.data.mail}`, label: 'Email' },
 ].filter(Boolean) as SocialLink[]
 ---
-
 <div
-  class="has-[a:hover]:bg-muted/50 overflow-hidden rounded-xl border p-4 transition-colors duration-300 ease-in-out"
+  class="has-[a:hover]:bg-muted/50 overflow-hidden border-2 border-muted-foreground p-4 transition-colors duration-300 ease-in-out"
 >
-  <div class="flex flex-wrap gap-4">
-    <div>
+  <div class="flex items-start gap-6"> {/* slightly larger gap from avatar */}
+    <div class="shrink-0">
       <AvatarComponent
         client:load
         src={avatar}
         alt={`Avatar of ${name}`}
         fallback={name[0]}
         className={cn(
-          'size-32 rounded-md [&>[data-slot="avatar-fallback"]]:rounded-md',
-          // !isAuthorPage &&
-          //   'duration-300 transition-all hover:scale-90',
+          'size-32 rounded-none [&>[data-slot="avatar-fallback"]]:rounded-md'
         )}
       />
-        </div>
-    <div class="flex grow flex-col justify-between gap-y-4">
+    </div>
+
+    {/* allow content to stretch further right */}
+    <div class="flex min-w-0 flex-1 flex-col">
       <div>
         <div class="flex flex-wrap items-center gap-x-2">
-          <h3 class="text-lg font-medium">{name}</h3>
+          <h3 class="text-2xl font-medium">{name}</h3>
         </div>
-        <p class="text-muted-foreground text-sm">{bio}</p>
+        <p class="mt-2 font-sans flex-wrap text-muted-foreground">
+          {bio}
+        </p>
       </div>
-      <SocialIcons links={socialLinks} />
+
+      {/* push links down and add more separation */}
+      <div class="mt-8 pt-4">
+        <SocialIcons links={socialLinks} />
+      </div>
     </div>
   </div>
 </div>
