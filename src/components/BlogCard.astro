@@ -36,7 +36,7 @@ const subpostCount = !isSubpost(entry.id) ? await getSubpostCount(entry.id) : 0
             {entry.data.title}
           </h3>
 
-          <span class="hidden text-sm whitespace-nowrap lg:inline">
+          <span class="text-muted-foreground hidden text-sm whitespace-nowrap lg:inline">
             {readTime}
           </span>
         </div>
@@ -48,28 +48,31 @@ const subpostCount = !isSubpost(entry.id) ? await getSubpostCount(entry.id) : 0
           <span>{formattedDate}</span>
           <Separator orientation="vertical" className="h-4!" />
           <span>{readTime}</span>
-          <Separator orientation="vertical" className="h-4!" />
           {
             entry.data.favourite == true && (
+                <Separator orientation="vertical" className="h-4!" />
                 <Icon name="lucide:stars" class="text-destructive size-4" />
+                <p class="text-destructive">Favourite</p>
             )
+            
           }
         </div>
 
         <div
-          class="hidden items-center gap-2 text-sm whitespace-nowrap lg:flex"
+          class="text-muted-foreground hidden items-center gap-2 text-sm whitespace-nowrap lg:flex"
         >
           <span>{formattedDate}</span>
-          <Separator orientation="vertical" className="h-4!" />
           {
             entry.data.favourite && (
+              <Separator orientation="vertical" className="h-4!" />
               <Icon name="lucide:stars" class="text-destructive size-4" />
+              <p class="text-destructive">Favourite</p>
             )
           }
         </div>
 
       <!-- Description -->
-        <p class="text-muted-foreground mt-2 mb-2">
+        <p class="text-muted-foreground mt-2 mb-4">
           {entry.data.description}
         </p>
 
