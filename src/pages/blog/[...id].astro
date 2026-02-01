@@ -146,7 +146,7 @@ const tocSections = await getTOCSections(currentPostId)
                     />
                     {author.isRegistered ? (
                       <Link
-                        href={`/authors/${author.id}`}
+                        href={`/about_me`}
                         underline
                         class="text-foreground"
                       >
@@ -190,6 +190,14 @@ const tocSections = await getTOCSections(currentPostId)
                 <Icon name="lucide:file-text" class="size-3" />
                 {subpostCount} subpost{subpostCount === 1 ? '' : 's'}
               </div>
+            )
+          }
+          {
+            post.data.favourite == true && (
+              <div class="flex w-full items-center justify-center gap-1 py-2 sm:w-fit sm:px-2 sm:py-0 first:sm:pl-0 last:sm:pr-0">
+                <Icon name="lucide:stars" class="text-destructive size-4" />
+                <p>Favourite</p>
+                </div>
             )
           }
         </div>
