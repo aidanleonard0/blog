@@ -3,15 +3,13 @@ import Breadcrumbs from '@/components/Breadcrumbs.astro'
 import PageHead from '@/components/PageHead.astro'
 import ProjectCard from '@/components/ProjectCard.astro'
 import Layout from '@/layouts/Layout.astro'
-import { getAllProjects } from '@/lib/data-utils'
-import { getAllPosts } from '@/lib/data-utils'
+import { getAllPosts, getAllProjects } from '@/lib/data-utils'
 
 import BlogCard from '@/components/BlogCard.astro'
+import SocialIcons from '@/components/SocialIcons.astro'
+import { SOCIAL_LINKS } from '@/consts'
 import { Image } from 'astro:assets'
 import me from '../assets/me.jpg'
-
-
-
 
 const projects = await getAllProjects()
 const posts = await getAllPosts()
@@ -28,24 +26,33 @@ const favouritePosts = posts.filter((post) => post.data.favourite)
       <section class="mt-5 flex flex-col gap-y-4">
         <h2 class="text-3xl font-medium">Aidan Leonard</h2>
 
-        <div class="flex flex-col gap-8 sm:flex-row sm:items-start text-muted-foreground">
+        <div
+          class="text-muted-foreground flex flex-col gap-8 sm:flex-row sm:items-start"
+        >
           <div class="flex-1 space-y-4">
+            <p>Hey again, it's Aidan.</p>
             <p>
-              Hey again, it's Aidan.
+              I'm a Computer Science undergrad currently working full time at
+              TJX as a Network Engineer. I made this website because I was bored
+              quite honestly. However I have always wanted a dedicated place to
+              put my most coherent thoughts. I don't care if anybody reads them.
             </p>
             <p>
-              I'm a Computer Science undergrad currently working full time at TJX as a Network Engineer. I made this website because I was bored, and have always wanted a dedicated place to put my most coherent thoughts. I don't care if anybody reads them.
+              Recently, I've been playing a lot of piano, and finally working
+              with a some hardware. RAM prices have ruined my plans to build a
+              home server, so I've turned to cheaper itch scratchers. My most
+              recent project was restoring and modding a PS3 that I found on
+              Facebook Marketplace.
             </p>
             <p>
-              Recently, I've been playing a lot of piano, and finally working with a some hardware. RAM prices have ruined my plans to build a home server, so I've turned to cheaper itch scratchers. My most recent project was restoring and modding a PS3 that I got off Facebook Marketplace.
-            </p>
-            <p>
-              Please take a look around, and read the blogs if you like. You might find something you find interesting or useful!
+              Please take a look around, and read the blogs if you like. You
+              might find something you find interesting or useful!
             </p>
             <p>Bye for now!</p>
+            <SocialIcons links={SOCIAL_LINKS} />
           </div>
 
-          <div class="flex flex-shrink-0 justify-center sm:justify-end ml-15">
+          <div class="ml-15 flex flex-shrink-0 justify-center sm:justify-end">
             <Image src={me} alt="Profile picture" width={200} height={200} />
           </div>
         </div>
@@ -53,13 +60,19 @@ const favouritePosts = posts.filter((post) => post.data.favourite)
 
       <section class="mt-5 flex flex-col gap-y-4">
         <h2 class="text-3xl font-medium">Education</h2>
-        <div class="flex flex-col gap-5 text-muted-foreground">
+        <div class="text-muted-foreground flex flex-col gap-5">
           <!-- University -->
           <div class="flex flex-col">
-            <p class="text-primary text- font-semibold">
+            <p class="text-primary text-lg font-semibold">
               University of East Anglia
             </p>
-            <p>BSc (Hons) Computer Science (with Placement) - 2023 - 2027</p>
+            <p>
+              <span class="font-bold">BSc (Hons) Computer Science</span>: Sept
+              2023 - Jul 2027
+            </p>
+            <ul class="list-inside list-disc">
+              <li>Placement at TJX Europe: Sept 2025 - Aug 2026</li>
+            </ul>
           </div>
 
           <!-- Sixth Form -->
@@ -68,14 +81,18 @@ const favouritePosts = posts.filter((post) => post.data.favourite)
 
             <div class="space-y-6">
               <div>
-                <p><span class="font-bold">A Level</span>: September 2020 – June 2023</p>
+                <p>
+                  <span class="font-bold">A Level</span>: Sept 2020 – Jun 2023
+                </p>
                 <ul class="list-inside list-disc">
                   <li>Physics, Computer Science BTEC, Media</li>
                 </ul>
               </div>
 
               <div>
-                <p><span class="font-bold">GCSE</span>: September 2016 – June 2020</p>
+                <p>
+                  <span class="font-bold">GCSE</span>: Sept 2016 – Jun 2020
+                </p>
                 <ul class="list-inside list-disc">
                   <li>
                     Obtained 10 GCSEs Grades 8 to 6, including Double Science
@@ -105,12 +122,7 @@ const favouritePosts = posts.filter((post) => post.data.favourite)
         </section>
         <section class="mt-2">
           <div class="min-w-full">
-            <!-- <div class="prose mb-8">
-        <p class="mt-0">
-
-        </p>
-      </div> -->
-            <h2 class="mb-4 text-3xl font-medium">Cool Projects</h2>
+            <!-- <h2 class="mb-4 text-3xl font-medium">Cool Computing Projects</h2>
             {
               projects.length > 0 ? (
                 <div class="flex flex-col gap-4">
@@ -123,7 +135,7 @@ const favouritePosts = posts.filter((post) => post.data.favourite)
                   Coming soon...
                 </p>
               )
-            }
+            } -->
           </div>
         </section>
       </section>
