@@ -19,7 +19,7 @@ const posts = await getAllPosts()
 const favouritePosts = posts.filter((post) => post.data.favourite)
 ---
 
-<Layout class="max-w-3xl">
+<Layout class="max-w-3xl md:px-10 xl:max-w-5xl">
   <PageHead slot="head" title="About" />
   <Breadcrumbs items={[{ label: 'about_me', icon: 'lucide:user' }]} />
   <section class="space-y-10">
@@ -28,17 +28,25 @@ const favouritePosts = posts.filter((post) => post.data.favourite)
       <section class="mt-5 flex flex-col gap-y-4">
         <h2 class="text-3xl font-medium">Aidan Leonard</h2>
 
-        <div class="flex flex-col gap-8 sm:flex-row sm:items-start text-lg text-muted-foreground">
-          <div class="flex-1">
+        <div class="flex flex-col gap-8 sm:flex-row sm:items-start text-muted-foreground">
+          <div class="flex-1 space-y-4">
             <p>
-              Lorem ipsum dolor sit amet consectetur. Fringilla malesuada
-              faucibus nisi nec placerat hendrerit aliquet etiam quam. Nunc quis
-              ultricies eget mattis vitae imperdiet eu.
+              Hey again, it's Aidan.
             </p>
+            <p>
+              I'm a Computer Science undergrad currently working full time at TJX as a Network Engineer. I made this website because I was bored, and have always wanted a dedicated place to put my most coherent thoughts. I don't care if anybody reads them.
+            </p>
+            <p>
+              Recently, I've been playing a lot of piano, and finally working with a some hardware. RAM prices have ruined my plans to build a home server, so I've turned to cheaper itch scratchers. My most recent project was restoring and modding a PS3 that I got off Facebook Marketplace.
+            </p>
+            <p>
+              Please take a look around, and read the blogs if you like. You might find something you find interesting or useful!
+            </p>
+            <p>Bye for now!</p>
           </div>
 
-          <div class="flex flex-shrink-0 justify-center sm:justify-end">
-            <Image src={me} alt="Profile picture" width={220} height={220} />
+          <div class="flex flex-shrink-0 justify-center sm:justify-end ml-15">
+            <Image src={me} alt="Profile picture" width={200} height={200} />
           </div>
         </div>
       </section>
