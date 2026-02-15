@@ -4,23 +4,19 @@ import PageHead from '@/components/PageHead.astro'
 import ProjectCard from '@/components/ProjectCard.astro'
 import Layout from '@/layouts/Layout.astro'
 import { getAllProjects } from '@/lib/data-utils'
+import { getAllPosts } from '@/lib/data-utils'
 
 import BlogCard from '@/components/BlogCard.astro'
-import { getAllAuthors, getPostsByAuthor } from '@/lib/data-utils'
 import { Image } from 'astro:assets'
 import me from '../assets/me.jpg'
 
-const authors = await getAllAuthors()
-const author = authors.find((a) => a.id === 'aidan')
 
-if (!author) {
-  throw new Error('Author not found')
-}
+
 
 const projects = await getAllProjects()
-const authorPosts = await getPostsByAuthor('aidan')
+const posts = await getAllPosts()
 
-const favouritePosts = authorPosts.filter((post) => post.data.favourite)
+const favouritePosts = posts.filter((post) => post.data.favourite)
 ---
 
 <Layout class="max-w-3xl">
