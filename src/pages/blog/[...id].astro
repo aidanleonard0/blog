@@ -28,6 +28,8 @@ import { Icon } from 'astro-icon/components'
 import { Image } from 'astro:assets'
 import { render } from 'astro:content'
 
+import me from '../../assets/me.jpg'
+
 export async function getStaticPaths() {
   const posts = await getAllPostsAndSubposts()
   return posts.map((post) => ({
@@ -138,8 +140,8 @@ const tocSections = await getTOCSections(currentPostId)
                 {authors.map((author) => (
                   <div class="flex items-center gap-x-1.5">
                     <Image
-                      src={author.avatar}
-                      alt={author.name}
+                      src={me}
+                      alt="Aidan Leonard Profile Picture"
                       width={20}
                       height={20}
                       class="rounded-full"
