@@ -1,16 +1,11 @@
-<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_271_118)">
-<rect width="512" height="74" fill="#CCCCCC"/>
-<rect y="146" width="512" height="74" fill="#CCCCCC"/>
-<rect y="292" width="512" height="74" fill="#CCCCCC"/>
-<rect y="438" width="512" height="74" fill="#CCCCCC"/>
-<rect y="74" width="72" height="72" fill="#CCCCCC"/>
-<rect y="366" width="72" height="72" fill="#CCCCCC"/>
-<rect x="440" y="220" width="72" height="72" fill="#CCCCCC"/>
-</g>
-<defs>
-<clipPath id="clip0_271_118">
-<rect width="512" height="512" fill="white"/>
-</clipPath>
-</defs>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="612" height="612">
+<path d="M0 0 C201.96 0 403.92 0 612 0 C612 201.96 612 403.92 612 612 C410.04 612 208.08 612 0 612 C0 410.04 0 208.08 0 0 Z " fill="#000000" transform="translate(0,0)"/>
+<path d="M0 0 C59.4 0 118.8 0 180 0 C180 11.88 180 23.76 180 36 C191.88 36 203.76 36 216 36 C216 95.4 216 154.8 216 216 C204.12 216 192.24 216 180 216 C180 227.88 180 239.76 180 252 C120.6 252 61.2 252 0 252 C0 240.12 0 228.24 0 216 C-11.88 216 -23.76 216 -36 216 C-36 156.6 -36 97.2 -36 36 C-24.12 36 -12.24 36 0 36 C0 24.12 0 12.24 0 0 Z " fill="#FFFFFF" transform="translate(355,313)"/>
+<path d="M0 0 C83.16 0 166.32 0 252 0 C252 11.88 252 23.76 252 36 C192.6 36 133.2 36 72 36 C72 59.76 72 83.52 72 108 C119.52 108 167.04 108 216 108 C216 119.88 216 131.76 216 144 C168.48 144 120.96 144 72 144 C72 167.76 72 191.52 72 216 C131.4 216 190.8 216 252 216 C252 227.88 252 239.76 252 252 C168.84 252 85.68 252 0 252 C0 168.84 0 85.68 0 0 Z " fill="#FFFFFF" transform="translate(31,313)"/>
+<path d="M0 0 C23.76 0 47.52 0 72 0 C72 71.28 72 142.56 72 216 C119.52 216 167.04 216 216 216 C216 227.88 216 239.76 216 252 C144.72 252 73.44 252 0 252 C0 168.84 0 85.68 0 0 Z " fill="#FFFFFF" transform="translate(67,25)"/>
+<path d="M0 0 C35.64 0 71.28 0 108 0 C108 59.4 108 118.8 108 180 C72.36 180 36.72 180 0 180 C0 120.6 0 61.2 0 0 Z " fill="#000000" transform="translate(391,349)"/>
+<path d="M0 0 C10.23 0 20.46 0 31 0 C31 5.61 31 11.22 31 17 C89.08 17 147.16 17 207 17 C207 11.72 207 6.44 207 1 C217.23 1 227.46 1 238 1 C238 14.53 238 28.06 238 42 C159.46 42 80.92 42 0 42 C0 28.14 0 14.28 0 0 Z " fill="#FFFFFF" transform="translate(326,146)"/>
+<path d="M0 0 C10.56 0 21.12 0 32 0 C32 10.56 32 21.12 32 32 C21.44 32 10.88 32 0 32 C0 21.44 0 10.88 0 0 Z " fill="#FFFFFF" transform="translate(483,89)"/>
+<path d="M0 0 C10.56 0 21.12 0 32 0 C32 10.56 32 21.12 32 32 C21.44 32 10.88 32 0 32 C0 21.44 0 10.88 0 0 Z " fill="#FFFFFF" transform="translate(365,89)"/>
 </svg>
