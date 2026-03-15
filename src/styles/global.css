@@ -69,7 +69,7 @@
   font-display: swap;
 }
 
-:root {
+/* :root {
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --primary: oklch(0.205 0 0);
@@ -79,9 +79,9 @@
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
   --ring: oklch(0.708 0 0);
-}
+} */
 
-[data-theme='dark'] {
+/* [data-theme='dark-og'] {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --primary: oklch(0.922 0 0);
@@ -91,7 +91,32 @@
   --destructive: oklch(0.704 0.191 22.216);
   --border: oklch(1 0 0 / 10%);
   --ring: oklch(0.556 0 0);
+} */
+:root {
+  --background: #ffffff;
+  --foreground: #454ca8;
+  --primary: #3f458f;
+  --primary-foreground: #ffffff;
+  --muted: #e6e9ff;
+  --muted-foreground: oklch(34.122% 0.01916 285.32);
+  --destructive: #d84b83;
+  --border: oklch(0.92 0 0);
+  --ring: oklch(0.65 0.05 289);
 }
+
+[data-theme='dark'] {
+  --background: #010311;
+  --foreground: #bec3ff;
+  --primary: #b8c2ff;
+  --primary-foreground: #292c3d;
+  --muted: #1d2241;
+  --muted-foreground: oklch(71.53% 0.03471 289.28);
+  --destructive: #fe81b5;
+  --border: oklch(1 0 0 / 10%);
+  --ring: oklch(0.556 0 0);
+
+}
+
 
 @layer base {
   h1, h2, h3, h4, h5, h6 {
