@@ -4,7 +4,7 @@ export const SITE: Site = {
   title: 'aidanleo.net',
   description:
     '',
-  href: 'https://aidanleonard.vercel.app',
+  href: 'https://aidanleo.net',
   author: 'Aidan Leonard',
   locale: 'en-UK',
   featuredPostCount: 3,
