@@ -41,25 +41,28 @@
       @apply mt-0;
     }
 
+    /* Headings: lots of space above, little below, so each heading visually
+       belongs to the content it introduces. Bigger headings get more room. */
+
     /* Don't use an <h1> in your posts, one is already generated in blog/[...id].astro */
     :where(h1):not(:where(.not-prose, .not-prose *)) {
-      @apply mt-8 mb-6 text-4xl;
+      @apply mt-16 mb-4 text-4xl leading-tight;
     }
 
     :where(h2):not(:where(.not-prose, .not-prose *)) {
-      @apply mt-8 mb-4 text-2xl;
+      @apply text-heading mt-14 mb-3 text-2xl leading-tight;
     }
 
     :where(h3):not(:where(.not-prose, .not-prose *)) {
-      @apply mt-8 mb-4 text-xl;
+      @apply text-subheading mt-10 mb-2 text-xl leading-snug;
     }
 
     :where(h4):not(:where(.not-prose, .not-prose *)) {
-      @apply mt-7 mb-3 text-lg;
+      @apply mt-8 mb-2 text-lg leading-snug;
     }
 
     :where(h5, h6):not(:where(.not-prose, .not-prose *)) {
-      @apply mt-5 mb-3;
+      @apply mt-6 mb-1;
     }
 
     :where(a):not(:where(.not-prose, .not-prose *)) {
@@ -153,6 +156,21 @@
 
     :where(.katex-display):not(:where(.not-prose, .not-prose *)) {
       @apply text-foreground/80 my-6 overflow-x-auto overflow-y-hidden py-2 tracking-normal;
+    }
+
+    /* Keep these last so they override the element margins above. */
+
+    /* Content directly under a heading hugs it (stops e.g. a paragraph's own
+       top margin out-voting the heading's small bottom margin) */
+    :where(h1, h2, h3, h4, h5, h6):not(:where(.not-prose, .not-prose *)) + * {
+      @apply mt-0;
+    }
+
+    /* A subheading straight after its parent heading (e.g. ## then ###) sits
+       close to it rather than looking like a whole new section */
+    :where(h1, h2, h3, h4, h5, h6):not(:where(.not-prose, .not-prose *))
+      + :where(h2, h3, h4, h5, h6) {
+      @apply mt-4;
     }
   }
 }

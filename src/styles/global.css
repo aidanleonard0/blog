@@ -26,6 +26,9 @@
 
   --color-border: var(--border);
   --color-ring: var(--ring);
+
+  --color-heading: var(--heading);
+  --color-subheading: var(--subheading);
 }
 
 @font-face {
@@ -92,6 +95,7 @@
   --border: oklch(1 0 0 / 10%);
   --ring: oklch(0.556 0 0);
 } */
+/* Previous light theme — swap back in if you prefer it
 :root {
   --background: #ffffff;
   --foreground: #454ca8;
@@ -102,6 +106,21 @@
   --destructive: #d84b83;
   --border: oklch(0.92 0 0);
   --ring: oklch(0.65 0.05 289);
+} */
+
+/* Experimental light theme: soft lavender "paper" that mirrors the dark theme's indigo */
+:root {
+  --background: #f8f7fc;
+  --foreground: #2e3270;
+  --primary: #3f458f;
+  --primary-foreground: #ffffff;
+  --muted: #ebeaf7;
+  --muted-foreground: #5b5e82;
+  --destructive: #c93a72;
+  --border: #e0def0;
+  --ring: oklch(0.65 0.05 289);
+  --heading: #4f46e5; /* vivid indigo for ## section headings */
+  --subheading: #4a4fb5; /* stronger blue for ### headings */
 }
 
 [data-theme='dark'] {
@@ -114,7 +133,8 @@
   --destructive: #fe81b5;
   --border: oklch(1 0 0 / 10%);
   --ring: oklch(0.556 0 0);
-
+  --heading: #8f9bff; /* saturated periwinkle for ## section headings */
+  --subheading: #a9b2ff; /* a step brighter/more saturated than body text */
 }
 
 

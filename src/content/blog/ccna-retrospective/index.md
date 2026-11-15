@@ -52,7 +52,7 @@ I found my subnetting skills to be concerning after going through Boson Exsim. I
 So I traded ability for memory. I found a method online that just required memorising a subnetting table, which you can write down in the exam. This makes all subnetting questions take a matter of seconds. You can even memorise it in your head eventually for interviews and general day-to-day subnetting.
 
 Here's the website I used, the table can be found here if anybody is interested:<br>
-[https://www.subnetting.net/Tutorial.aspx]()
+[https://www.subnetting.net/Tutorial.aspx](https://www.subnetting.net/Tutorial.aspx)
 
 
 ## The day of the exam
